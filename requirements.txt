@@ -5,3 +5,4 @@ langsmith
 langchain-community
 python-dotenv
 openai
+IPython
