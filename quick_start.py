@@ -42,9 +42,22 @@ graph_builder.add_edge("chatbot", END)
 
 graph = graph_builder.compile()
 
-from IPython.display import Image, display
+def stream_graph_updates(user_input: str):
+    for event in graph.stream({"messages": [{"role": "user", "content": user_input}]}):
+        for value in event.values():
+            print("Assistant:", value["messages"][-1].content)
 
-try:
-    display(Image(graph.get_graph().draw_mermaid_png()))
-except Exception:
-    pass
+while True:
+    try:
+        user_input = input("User: ")
+        if user_input.lower() in ["quit", "exit", "q"]:
+            print("Goodbye baby")
+            break
+
+        stream_graph_updates(user_input)
+    
+    except:
+        user_input = "What do you know about CS2?"
+        print("User: " + user_input)
+        stream_graph_updates(user_input)
+        break
