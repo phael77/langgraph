@@ -7,3 +7,4 @@ python-dotenv
 openai
 IPython
 tavily-python
+langchain_experimental
