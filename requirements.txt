@@ -8,3 +8,5 @@ openai
 IPython
 tavily-python
 langchain_experimental
+httpx
+pygraphviz
