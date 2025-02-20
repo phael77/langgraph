@@ -9,4 +9,9 @@ IPython
 tavily-python
 langchain_experimental
 httpx
-pygraphviz
+bs4
+duckduckgo_search
+langgraph-checkpoint-sqlite
+langchain-chroma 
+pypdf 
+sentence-transformers
